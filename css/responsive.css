@@ -244,7 +244,8 @@
     }
 
     .logotyp-brand-zoom{
-        left: 213px;
+        left: 167px;
+        top: -205px;
     }
 
     .logotyp-brand{
@@ -299,6 +300,11 @@
 
     .section-top > img{
         transform: scale(3);
+    }
+
+    .logotyp-brand-zoom p {
+        min-width: 200px;
+        max-width: 200px;
     }
 }
 
