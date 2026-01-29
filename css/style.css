@@ -275,6 +275,7 @@ h6 {
 .section-top{
   position: relative;
   padding-top: 260px;
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -459,18 +460,29 @@ h6 {
   position: absolute;
   left: 353px;
   top: -55px;
-  gap: 12px;
   right: 0;
 }
 
 .logotyp-brand-zoom img{
-  width: 220px;
+  width: 154px;
 }
 
 .logotyp-brand-zoom p{
+  gap: 12px;
+  display: flex;
+  max-width: 390px;
+  min-width: 390px;
+  align-items: center;
   color: var(--primary);
-  max-width: 330px;
-  min-width: 330px;
+}
+
+.logotyp-brand-zoom p:before{
+  content: "";
+  height: 2px;
+  width: 80px;
+  min-width: 80px;
+  display: block;
+  background-color: var(--yellow);
 }
 
 .section-alternative{

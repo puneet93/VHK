@@ -1,7 +1,13 @@
 @media screen and (max-width: 1280px) {
     .logotyp-brand-zoom p{
-        min-width: 250px;
-        max-width: 250px;
+        min-width: 320px;
+        max-width: 320px;
+        font-size: 18px !important;
+    }
+
+    .logotyp-brand-zoom p:before{
+        width: 40px;
+        min-width: 40px;
     }
 
     .swiper-cards .swiper-slide {
@@ -33,6 +39,11 @@
     .alternative-logos img{
         max-width: 160px;
     }
+
+    .section-top > img{
+        transform-origin: top center;
+        transform: scale(2.5);
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -55,9 +66,28 @@
     }
 
     .logotyp-brand-zoom p {
-        min-width: 120px;
-        max-width: 120px;
+        min-width: 300px;
+        max-width: 300px;
         font-size: 16px;
+    }
+
+    .logotyp-brand-zoom, .logotyp-brand-zoom p{
+        flex-direction: column-reverse;
+    }
+
+    .logotyp-brand-zoom{
+        left: 163px;
+        top: -145px;
+    }
+    
+    .logotyp-brand-zoom p{
+        gap: 8px;
+    }
+
+    .logotyp-brand-zoom p:before{
+        width: 2px;
+        height: 20px;
+        min-width: 2px;
     }
 
     .logotyp-tabs{
@@ -262,6 +292,14 @@
     .copyright {
         margin-top: 56px;
     }
+
+    .section-top{
+        padding-top: 150px;
+    }
+
+    .section-top > img{
+        transform: scale(3);
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -284,5 +322,10 @@
     .horal-cely{
         bottom: -156px;
         transform: scale(1.1);
+    }
+
+    .hero h1{
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }

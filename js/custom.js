@@ -72,7 +72,7 @@ gsap.to(sections, {
 const tlLogotyp = gsap.timeline({
   scrollTrigger: {
     trigger: ".logotyp",
-    start: "top top",
+    start: "center center",
     end: "+=3000", // Increased duration to make the transition feel smooth
     pin: true,
     scrub: 1,
@@ -95,11 +95,11 @@ tlLogotyp
   })
   
   // 2. Show the tabs initially
-  .from(".logotyp-tabs", { 
-    y: 20, 
-    opacity: 0, 
-    duration: 0.5 
-  })
+  // .from(".logotyp-tabs", { 
+  //   y: 20, 
+  //   opacity: 0, 
+  //   duration: 0.5 
+  // })
 
   // 3. TRANSITION: Hide tabs, Show Zoom, and Change Background
   // We use the same label or offset ("reveal") to make them happen at once
@@ -132,7 +132,7 @@ gsap.to(dresses, {
     trigger: ".section-dressing",
     pin: true,
     scrub: 1,
-    start: "top top",
+    start: "center center",
     end: () => "+=" + document.querySelector(".dress-images").scrollWidth
   }
 });
