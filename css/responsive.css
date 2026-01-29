@@ -306,6 +306,10 @@
         min-width: 200px;
         max-width: 200px;
     }
+
+    .proc-preview{
+        min-height: auto;
+    }
 }
 
 @media screen and (max-width: 575px) {
