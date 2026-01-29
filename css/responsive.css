@@ -1,0 +1,288 @@
+@media screen and (max-width: 1280px) {
+    .logotyp-brand-zoom p{
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    .swiper-cards .swiper-slide {
+        width: 520px;
+    }
+
+    .section-bottom-area {
+        padding-top: 80px;
+    }
+
+    .hero-t-member{
+        top: 20px;
+        max-width: 200px;
+    }
+
+    .section-top{
+        padding-top: 180px;
+    }
+
+    .text-xl{
+        font-size: var(--32);
+    }
+
+    .alternative-logos{
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .alternative-logos img{
+        max-width: 160px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    h1,
+    .h1{
+        font-size: var(--64);
+    }
+
+    h2,
+    .h2{
+        font-size: var(--40);
+    }
+
+    .text-xl{
+        font-size: var(--24);
+    }
+
+    .text-l{
+        font-size: var(--18);
+    }
+
+    .logotyp-brand-zoom p {
+        min-width: 120px;
+        max-width: 120px;
+        font-size: 16px;
+    }
+
+    .logotyp-tabs{
+        margin-top: 20px;
+    }
+
+    .logotyp-brand{
+        margin-top: 48px;
+    }
+
+    .typografie-vv h3{
+        font-size: 95px;
+    }
+
+    .typografie-content p{
+        font-size: var(--18);
+        margin-bottom: 24px;
+    }
+
+    .typografie-content h2 {
+        margin-bottom: 0.4em;
+    }
+
+    .typografie {
+        margin-top: 100px;
+    }
+
+    .section-alternative{
+        padding-bottom: 80px;
+    }
+
+    .section-historie{
+        padding-top: 65px;
+    }
+
+    .swiper-historie .swiper-slide {
+        width: 216px;
+    }
+
+    .historie-logo img{
+        width: 148px;
+        height: 148px;
+    }
+
+    .section-historie > img {
+        margin-top: -22%;
+    }
+
+    .section-video{
+        padding-bottom: 80px;
+    }
+
+    .swiper-cards .swiper-slide {
+        width: 440px;
+    }
+
+    .footer-links{
+        gap: 24px;
+    }
+
+    .horal-cely{
+        max-width: 640px;
+    }
+
+    .navbar-nav{
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        z-index: 50;
+    }
+
+    .navbar-collapse{
+        background-color: var(--primary);
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .navbar-nav{
+        gap: 0;
+        margin-top: 24px;
+    }
+
+    .navbar-nav a{
+        color: var(--yellow);
+        padding: 12px 0;
+    }
+    
+    .navbar-collapse > a{
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 32px;
+    }
+
+    .hero-t-member{
+        position: relative;
+        margin: -15px 0 -55px 0;
+    }
+    
+    .hero-t-member + a{
+        z-index: 1;
+    }
+
+
+    .hero-shape{
+        margin: 40px 0;
+    }
+
+    .hero .text-l {
+        margin-bottom: 40px;
+    }
+
+    .hero .btn{
+        margin-bottom: 0;
+    }
+
+    .proc-preview{
+        padding-top: 80px;
+    }
+
+    .proc-text h2{
+        margin-bottom: 100px;
+    }
+
+    .logotyp-tabs a{
+        padding: 10px 16px 6px;
+    }
+
+    .logotyp{
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .logotyp-tabs {
+        margin-top: 30px;
+    }
+
+    .logotyp-brand-image{
+        width: auto;
+        left: -12px;
+        right: -12px;
+    }
+
+    .logotyp-brand-image p{
+        transform: none;
+        bottom: 10px;
+        right: 15px;
+        top: auto;
+    }
+
+    .logotyp-brand-zoom{
+        left: 213px;
+    }
+
+    .logotyp-brand{
+        margin-bottom: 35px;
+    }
+
+    .alternative-logos img{
+        margin: auto;
+        max-width: 220px;
+    }
+
+    .alternative-logos {
+        padding-top: 36px;
+        padding-bottom: 80px;
+    }
+
+    .typografie-content{
+        margin-bottom: 55px;
+    }
+
+    .typografie-content p{
+        max-width: 250px;
+    }
+
+    .typografie-vv h3{
+        font-size: 135px;
+    }
+
+    .dress{
+        flex-direction: column;
+    }
+
+    .dress-name{
+        padding:0 15px 15px !important;
+    }
+
+    .footer-links{
+        margin-bottom: 0;
+    }
+
+    .footer-grid{
+        margin-bottom: 50px;
+    }
+
+    .copyright {
+        margin-top: 56px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .logotyp-content .col-auto{
+        max-width: 100%;
+    }
+
+    .logotyp-content .col-auto:first-child{
+        margin-bottom: 10px;
+    }
+
+    .swiper-cards .swiper-slide {
+        width: 342px;
+    }
+
+    .footer{
+        padding-bottom: 240px;
+    }
+
+    .horal-cely{
+        bottom: -156px;
+        transform: scale(1.1);
+    }
+}
