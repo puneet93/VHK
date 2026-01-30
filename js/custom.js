@@ -165,7 +165,7 @@ gsap.to(dressItems, {
   ease: "none",
   scrollTrigger: {
     trigger: ".section-dressing",
-    start: "top top",
+    start: "center center",
     end: () => "+=" + dressSection.scrollWidth,
     pin: true, // Pins the entire overlay section including the BG
     scrub: 1,

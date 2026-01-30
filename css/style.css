@@ -568,6 +568,12 @@ h6 {
 
 .section-overlay-image > img{
   margin-top: -9.6%;
+  transform: translateY(3px);
+}
+
+.section-overlay-image .container{
+  position: relative;
+  z-index: 1;
 }
 
 .section-dressing{
