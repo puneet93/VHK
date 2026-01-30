@@ -119,12 +119,12 @@
         padding-bottom: 80px;
     }
 
-    .section-historie{
+    .section-overlay-image{
         padding-top: 65px;
     }
 
-    .swiper-historie .swiper-slide {
-        width: 216px;
+    .logos-historie .historie-logo {
+        min-width: 216px;
     }
 
     .historie-logo img{
@@ -132,7 +132,7 @@
         height: 148px;
     }
 
-    .section-historie > img {
+    .section-overlay-image > img {
         margin-top: -22%;
     }
 

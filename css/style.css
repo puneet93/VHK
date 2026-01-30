@@ -528,8 +528,12 @@ h6 {
 }
 
 .section-historie{
-  background-color: var(--white);
+  background-color: var(--primary);
+}
+
+.section-overlay-image{
   padding-top: 120px;
+  background-color: var(--white);
 }
 
 .section-historie h2{
@@ -552,15 +556,17 @@ h6 {
   line-height: 1;
 }
 
-.swiper{
-  overflow: visible;
+.logos-historie{
+  gap: 24px;
 }
 
-.swiper-historie .swiper-slide{
+.logos-historie .historie-logo{
   width: 360px;
+  flex-shrink: 0;
+  min-width: 360px;
 }
 
-.section-historie > img{
+.section-overlay-image > img{
   margin-top: -9.6%;
 }
 
@@ -881,5 +887,10 @@ h6 {
 }
 
 .section-overlay-image{
-  background-color: var(--primary);
+  position: relative;
+  /* background-color: var(--primary); */
 }
+
+/* .section-historie > .pin-spacer:first-child, .section-historie > .pin-spacer:last-child{
+  z-index: 99 !important;
+} */

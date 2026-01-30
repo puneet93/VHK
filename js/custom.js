@@ -1,8 +1,4 @@
 $(document).ready(function () {
-  var swiper = new Swiper(".swiper-historie", {
-    slidesPerView: "auto",
-    spaceBetween: 24
-  });
 
   var swiperLeg = new Swiper(".legendy-swiper", {
     slidesPerView: "auto",
@@ -36,10 +32,7 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 
-// 2. PROC-PREVIEW (Pin a Horizontální scroll)
-// Obalte obsah .proc-preview do divu .horizontal-wrapper, pokud chcete více panelů
 let sections = gsap.utils.toArray(".proc-panel"); 
-
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),
   ease: "none",
@@ -93,13 +86,6 @@ tlLogotyp
     opacity: 0, 
     duration: 0.8 
   })
-  
-  // 2. Show the tabs initially
-  // .from(".logotyp-tabs", { 
-  //   y: 20, 
-  //   opacity: 0, 
-  //   duration: 0.5 
-  // })
 
   // 3. TRANSITION: Hide tabs, Show Zoom, and Change Background
   // We use the same label or offset ("reveal") to make them happen at once
@@ -122,18 +108,68 @@ tlLogotyp
     duration: 0.8 
   }, "<"); // Start at the same time as the background change
 
-// 4. DRESSING (Pin a Horizontální scroll)
-let dresses = gsap.utils.toArray(".dress");
+// // 4. DRESSING (Pin a Horizontální scroll)
+// let dresses = gsap.utils.toArray(".dress");
 
-gsap.to(dresses, {
-  xPercent: -100 * (dresses.length - 1),
+// gsap.to(dresses, {
+//   xPercent: -100 * (dresses.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".section-dressing",
+//     pin: true,
+//     scrub: 1,
+//     start: "center center",
+//     end: () => "+=" + document.querySelector(".dress-images").scrollWidth
+//   }
+// });
+
+// // 4. DRESSING (Pin a Horizontální scroll)
+// let history = gsap.utils.toArray(".historie-logo");
+
+// gsap.to(history, {
+//   xPercent: -100 * (history.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".section-historie .container",
+//     pin: true,
+//     scrub: 1,
+//     start: "center center",
+//     end: () => "+=" + document.querySelector(".logos-historie").scrollWidth
+//   }
+// });
+
+// --- SECTION: HISTORIE LOG ---
+let historySection = document.querySelector(".logos-historie");
+let historyItems = gsap.utils.toArray(".historie-logo");
+
+gsap.to(historyItems, {
+  x: () => -(historySection.scrollWidth - window.innerWidth), // Moves exactly the distance of hidden content
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".section-overlay-image",
+    start: "top top",
+    end: () => "+=" + historySection.scrollWidth,
+    // pin: ".section-historie .container", // Pin the container inside
+    pin: true, // Pin the container inside
+    scrub: 1,
+    invalidateOnRefresh: true,
+  }
+});
+
+// --- SECTION: DRESSING (With Sticky BG) ---
+let dressSection = document.querySelector(".dress-images");
+let dressItems = gsap.utils.toArray(".dress");
+
+gsap.to(dressItems, {
+  x: () => -(dressSection.scrollWidth - window.innerWidth),
   ease: "none",
   scrollTrigger: {
     trigger: ".section-dressing",
-    pin: true,
+    start: "top top",
+    end: () => "+=" + dressSection.scrollWidth,
+    pin: true, // Pins the entire overlay section including the BG
     scrub: 1,
-    start: "center center",
-    end: () => "+=" + document.querySelector(".dress-images").scrollWidth
+    invalidateOnRefresh: true,
   }
 });
 
@@ -151,7 +187,6 @@ gsap.utils.toArray('p').forEach(el => {
     ease: "power2.out"
   });
 });
-
 
 
 gsap.utils.toArray("[data-fade]").forEach(el => {
