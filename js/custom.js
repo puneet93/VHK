@@ -23,6 +23,7 @@ $(document).ready(function () {
 
 // animation
 gsap.registerPlugin(ScrollTrigger);
+
 // 1. HLADKÝ SCROLL (Lenis)
 const lenis = new Lenis();
 lenis.on('scroll', ScrollTrigger.update);
@@ -66,14 +67,13 @@ const tlLogotyp = gsap.timeline({
   scrollTrigger: {
     trigger: ".logotyp",
     start: "center center",
-    end: "+=3000", // Increased duration to make the transition feel smooth
+    end: "+=3000", 
     pin: true,
     scrub: 1,
   }
 });
 
 tlLogotyp
-  // 1. Initial appearance of the logo
   .from(".logotyp-brand img", { 
     scale: 0.5, 
     opacity: 0, 
@@ -88,69 +88,38 @@ tlLogotyp
   })
 
   // 3. TRANSITION: Hide tabs, Show Zoom, and Change Background
-  // We use the same label or offset ("reveal") to make them happen at once
   .to(".logotyp-tabs", { 
     opacity: 0, 
     y: -20, 
-    pointerEvents: "none", // Prevent clicking while hidden
+    pointerEvents: "none",
     duration: 0.5 
-  }, "+=0.5") // Small pause before transition
+  }, "+=0.5") 
   
   .to(".logotyp", { 
-    backgroundColor: "#fff", // Your brand dark green or any color
+    backgroundColor: "#fff",
     duration: 0.8 
-  }, "<") // Start at the same time as the tabs hiding
+  }, "<")
   
   .from(".logotyp-brand-zoom", { 
     scale: 0.8,
     x: -50, 
     opacity: 0, 
     duration: 0.8 
-  }, "<"); // Start at the same time as the background change
-
-// // 4. DRESSING (Pin a Horizontální scroll)
-// let dresses = gsap.utils.toArray(".dress");
-
-// gsap.to(dresses, {
-//   xPercent: -100 * (dresses.length - 1),
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".section-dressing",
-//     pin: true,
-//     scrub: 1,
-//     start: "center center",
-//     end: () => "+=" + document.querySelector(".dress-images").scrollWidth
-//   }
-// });
-
-// // 4. DRESSING (Pin a Horizontální scroll)
-// let history = gsap.utils.toArray(".historie-logo");
-
-// gsap.to(history, {
-//   xPercent: -100 * (history.length - 1),
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".section-historie .container",
-//     pin: true,
-//     scrub: 1,
-//     start: "center center",
-//     end: () => "+=" + document.querySelector(".logos-historie").scrollWidth
-//   }
-// });
+  }, "<");
 
 // --- SECTION: HISTORIE LOG ---
 let historySection = document.querySelector(".logos-historie");
 let historyItems = gsap.utils.toArray(".historie-logo");
 
 gsap.to(historyItems, {
-  x: () => -(historySection.scrollWidth - window.innerWidth), // Moves exactly the distance of hidden content
+  x: () => -((historySection.scrollWidth - window.innerWidth) + 500), 
   ease: "none",
   scrollTrigger: {
     trigger: ".section-overlay-image",
     start: "top top",
     end: () => "+=" + historySection.scrollWidth,
     // pin: ".section-historie .container", // Pin the container inside
-    pin: true, // Pin the container inside
+    pin: true,
     scrub: 1,
     invalidateOnRefresh: true,
   }
@@ -161,12 +130,12 @@ let dressSection = document.querySelector(".dress-images");
 let dressItems = gsap.utils.toArray(".dress");
 
 gsap.to(dressItems, {
-  x: () => -(dressSection.scrollWidth - window.innerWidth),
+  x: () => -((dressSection.scrollWidth - window.innerWidth) + 150),
   ease: "none",
   scrollTrigger: {
     trigger: ".section-dressing",
     start: "center center",
-    end: () => "+=" + dressSection.scrollWidth,
+    end: () => "+=" + (dressSection.scrollWidth + 500),
     pin: true, // Pins the entire overlay section including the BG
     scrub: 1,
     invalidateOnRefresh: true,
