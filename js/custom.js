@@ -130,7 +130,7 @@ let dressSection = document.querySelector(".dress-images");
 let dressItems = gsap.utils.toArray(".dress");
 
 gsap.to(dressItems, {
-  x: () => -((dressSection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 150 : 30)),
+  x: () => -((dressSection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 150 : 15)),
   ease: "none",
   scrollTrigger: {
     trigger: ".section-dressing",
