@@ -112,7 +112,7 @@ let historySection = document.querySelector(".logos-historie");
 let historyItems = gsap.utils.toArray(".historie-logo");
 
 gsap.to(historyItems, {
-  x: () => -((historySection.scrollWidth - window.innerWidth) + 500), 
+  x: () => -((historySection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 500 : 100)), 
   ease: "none",
   scrollTrigger: {
     trigger: ".section-overlay-image",
@@ -130,7 +130,7 @@ let dressSection = document.querySelector(".dress-images");
 let dressItems = gsap.utils.toArray(".dress");
 
 gsap.to(dressItems, {
-  x: () => -((dressSection.scrollWidth - window.innerWidth) + 150),
+  x: () => -((dressSection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 150 : 30)),
   ease: "none",
   scrollTrigger: {
     trigger: ".section-dressing",
