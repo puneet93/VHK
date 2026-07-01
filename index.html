@@ -5,15 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet" /> -->
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/images-compare.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="/fonts.css" />
     
 
     <title>VHK - Vsetín</title>
@@ -38,7 +40,10 @@
                 <a class="nav-link" href="#">Vizuální identita</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Fanoušci a legendy</a>
+                <a class="nav-link" href="#">Fanoušci</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">legendy</a>
               </li>
             </ul>
             <a href="#" class="btn ls btn-sm">Ke stažení</a>
@@ -55,7 +60,7 @@
 
             <p class="text-l ls">Zelený kraj, ve kterém zdomácněla žlutá. <br />Pokračujeme v novém, ale jsme hrdí na svou minulost. <br />Podívej se, jak jdeme vstříc novým úspěchům.</p>
 
-            <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+            <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
 
             <img src="/images/vsetin_left.png" alt="banner image" class="hero-t-member" />
 
@@ -84,7 +89,7 @@
                   <h2 data-fade>VIZE</h2>
                   <div class="proc-video-poster">
                     <img src="/images/vize-poster.png" alt="poster" />
-                    <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+                    <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
                   </div>
                   <!-- /.proc-video-poster -->
                   <h2 data-fade class="text-end">VALAŠSKA</h2>              
@@ -162,17 +167,21 @@
           <!-- /.row -->
 
           <div class="alternative-logos text-center">
-            <div class="row g-4 justify-content-between align-items-center">
-              <div class="col-sm-auto col-12">
-                <img src="/images/kulata.svg" alt="kulata" class="img-fluid d-block" />
+            <div class="row g-4 g-lg-5 justify-content-between align-items-center">
+              <div class="col-sm-6 col-12">
+                <img src="/images/kulata.svg" alt="kulata" class="img-fluid d-block mx-auto" />
               </div>
               <!-- /.col-auto -->
-              <div class="col-sm-auto col-12">
-                <img src="/images/klobouk.svg" alt="klobouk" class="img-fluid d-block" />
+              <div class="col-sm-6 col-12">
+                <img src="/images/valasi.svg" alt="valasi" class="img-fluid d-block mx-auto" />
               </div>
               <!-- /.col-auto -->
-              <div class="col-sm-auto col-12">
-                <img src="/images/valach.svg" alt="valach" class="img-fluid d-block" />
+              <div class="col-sm-6 col-12">
+                <img src="/images/klobouk.svg" alt="klobouk" class="img-fluid d-block mx-auto" />
+              </div>
+              <!-- /.col-auto -->
+              <div class="col-sm-6 col-12">
+                <img src="/images/valach.svg" alt="valach" class="img-fluid d-block mx-auto" />
               </div>
               <!-- /.col-auto -->
             </div>
@@ -190,8 +199,8 @@
               <div class="col-md-4">
                 <div class="typografie-content">
                   <h2>TYPOGRAFIE</h2>
-                  <p>Písmem zvoleným pro značku je písmo <strong>Khand</strong>. Písmo je volným písmem z nabídky Google Fonts.</p>
-                  <a href="#" class="btn ls btn-sm"><span>Ke stažení</span></a>
+                  <p>Písmem zvoleným pro značku je písmo <strong>VALACH Display</strong>. Písmo je volným písmem z nabídky Google Fonts.</p>
+                  <a href="#" class="btn ls btn-sm font-open fw-semibold"><span>Ke stažení</span></a>
                 </div>
                 <!-- /.typografie-content -->
               </div>
@@ -267,7 +276,22 @@
             <div class="dress d-flex align-items-start">
               <h2 class="dress-name">DRESY</h2>
               <div class="dress-images text-center flex-grow-1">
-                <img src="/images/yellow-dress.png" alt="yellow dress" class="img-fluid" />
+                <!-- <img src="/images/yellow-dress.png" alt="yellow dress" class="img-fluid" /> -->
+                <div class="row g-2">
+                  <div class="col-6">
+                    <div class="js-img-compare">
+                      <div style="display: none;">
+                          <img src="/images/dress-image-overlay.png" alt="dress image 1" class="img-fluid" />
+                        </div>
+                        <div>
+                          <img src="/images/dress-image-1.png" alt="dress image 1" class="img-fluid" />
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-6">
+                    <img src="/images/dress-image-2.png" alt="dress image 2" class="img-fluid" />
+                  </div>
+                </div>
               </div>
               <!-- /.dress-images -->
             </div>
@@ -290,7 +314,7 @@
           <div class="container">
             <div class="video-preview">
               <img src="/images/video-poster.png" alt="video poster" class="img-fluid w-100 d-block" />
-              <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>O dresech</span></a>
+              <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>O dresech</span></a>
             </div>
             <!-- /.video-preview -->
           </div>
@@ -304,7 +328,8 @@
         <div class="container">
           <div class="section-bottom-area">
             <div class="section-heading d-flex justify-content-between align-items-center">
-              <h2>Klubové legendy</h2>
+              <!-- <h2>Klubové legendy</h2> -->
+              <h2>CLUB LEGENDS</h2>
 
               <div class="swiper-btns d-md-flex d-none align-items-center">
                 <button class="swiper-legendy-left">
@@ -322,7 +347,7 @@
                   <div class="swiper-card">
                     <div class="swiper-card-image">
                       <img src="/images/video-poster.png" alt="Poster" />
-                      <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+                      <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
                     </div>
                     <!-- /.swiper-card-image -->
                     <div class="swiper-card-content">
@@ -337,7 +362,7 @@
                   <div class="swiper-card">
                     <div class="swiper-card-image">
                       <img src="/images/video-poster.png" alt="Poster" />
-                      <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+                      <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
                     </div>
                     <!-- /.swiper-card-image -->
                     <div class="swiper-card-content">
@@ -352,7 +377,7 @@
                   <div class="swiper-card">
                     <div class="swiper-card-image">
                       <img src="/images/video-poster.png" alt="Poster" />
-                      <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+                      <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
                     </div>
                     <!-- /.swiper-card-image -->
                     <div class="swiper-card-content">
@@ -402,7 +427,7 @@
                   <div class="swiper-card">
                     <div class="swiper-card-image">
                       <img src="/images/video-poster.png" alt="Poster" />
-                      <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+                      <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
                     </div>
                     <!-- /.swiper-card-image -->
                     <div class="swiper-card-content">
@@ -417,7 +442,7 @@
                   <div class="swiper-card">
                     <div class="swiper-card-image">
                       <img src="/images/video-poster.png" alt="Poster" />
-                      <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+                      <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
                     </div>
                     <!-- /.swiper-card-image -->
                     <div class="swiper-card-content">
@@ -432,7 +457,7 @@
                   <div class="swiper-card">
                     <div class="swiper-card-image">
                       <img src="/images/video-poster.png" alt="Poster" />
-                      <a href="#" class="btn ls d-flex align-items-center"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
+                      <a href="#" class="btn ls d-flex align-items-center font-open fw-semibold"><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>Přehrát příběh</span></a>
                     </div>
                     <!-- /.swiper-card-image -->
                     <div class="swiper-card-content">
@@ -567,6 +592,7 @@
                 <li><a href="#">Kam jdeme</a></li>
                 <li><a href="#">Vizuální identita</a></li>
                 <li><a href="#">Fanoušci</a></li>
+                <li><a href="#">legendy</a></li>
               </ul>
 
               <a href="#" class="btn d-md-inline-block d-none btn-sm ls"><span>Ke stažení</span></a>
@@ -594,6 +620,8 @@
 
     <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.images-compare.js"></script>
+    <script type="text/javascript" src="/js/images-compare-controls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="/js/custom.js"></script>
   </body>

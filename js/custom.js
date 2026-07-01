@@ -169,3 +169,31 @@ gsap.utils.toArray("[data-fade]").forEach(el => {
     }
   });
 });
+
+
+// image compare
+$(() => {
+    var imagesCompareElement = $('.js-img-compare').imagesCompare();
+    var imagesCompare = imagesCompareElement.data('imagesCompare');
+    var events = imagesCompare.events();
+
+    imagesCompare.on(events.changed, (event) => {
+        console.log(events.changed);
+        console.log(event.ratio);
+        if (event.ratio < 0.4) {
+            console.log('We see more than half of the back image');
+        }
+        if (event.ratio > 0.6) {
+            console.log('We see more than half of the front image');
+        }
+
+        if (event.ratio <= 0) {
+            console.log('We see completely back image');
+        }
+
+        if (event.ratio >= 1) {
+            console.log('We see completely front image');
+        }
+    });
+    window.imagesCompareBindControls(imagesCompare);
+});
