@@ -329,8 +329,8 @@ h6 {
 
 .hero-t-member{
   position: absolute;
-  top: -113px;
-  right: 0;
+  right: -50px;
+  top: -230px;
 }
 
 .proc-preview{
@@ -885,8 +885,10 @@ h6 {
 }
 
 .navbar-nav a{
+  font-weight: 600;
   padding-bottom: 0;
   color: var(--primary);
+  font-family: var(--F-opensans);
 }
 
 .navbar-nav a:hover{
@@ -901,8 +903,9 @@ h6 {
 
 .navbar-toggler{
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--primary);
+  font-family: var(--F-opensans);
 }
 
 

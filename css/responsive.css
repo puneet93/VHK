@@ -19,8 +19,9 @@
     }
 
     .hero-t-member{
-        top: 20px;
-        max-width: 200px;
+        top: -140px;
+        right: -10px;
+        max-width: 320px;
     }
 
     .section-top{
@@ -43,6 +44,10 @@
     .section-top > img{
         transform-origin: top center;
         transform: scale(2.5);
+    }
+
+    .navbar-nav{
+        gap: 32px;  
     }
 }
 
@@ -154,11 +159,20 @@
     }
 
     .navbar-nav{
-        gap: 24px;
+        gap: 8px;
+        font-size: var(--12);
+    }
+
+    .hero-t-member{
+        right: -60px;
     }
 }
 
 @media screen and (max-width: 767px) {
+    .text-l {
+        font-size: var(--14);
+    }
+
     .navbar{
         padding-top: 12px;
         padding-bottom: 12px;
@@ -188,6 +202,8 @@
     }
 
     .hero-t-member{
+        top: 0;
+        right: 0;
         position: relative;
         margin: -15px 0 -55px 0;
     }
@@ -218,7 +234,7 @@
     }
 
     .logotyp-tabs a{
-        padding: 10px 16px 6px;
+        padding: 10px 14px;
     }
 
     .logotyp{
@@ -246,7 +262,7 @@
 
     .logotyp-brand-zoom{
         left: 167px;
-        top: -205px;
+        top: -246px;
     }
 
     .logotyp-brand{
