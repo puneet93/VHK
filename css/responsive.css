@@ -19,7 +19,7 @@
     }
 
     .hero-t-member{
-        top: -140px;
+        top: 100px;
         right: -10px;
         max-width: 320px;
     }
@@ -205,7 +205,7 @@
         top: 0;
         right: 0;
         position: relative;
-        margin: -15px 0 -55px 0;
+        margin: 20px 0 -55px 0;
     }
     
     .hero-t-member + a{
