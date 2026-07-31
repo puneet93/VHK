@@ -421,7 +421,8 @@ h6 {
 
 .logotyp{
   min-height: 1024px;
-  padding-top: 200px;
+  margin-top: 180px;
+  padding-top: 20px;
 }
 
 .logotyp h2{
@@ -497,7 +498,7 @@ h6 {
 }
 
 .logotyp-content .col-auto{
-  max-width: 340px;
+  max-width: 342px;
   width: 100%;
 }
 
@@ -539,7 +540,7 @@ h6 {
   background-color: var(--white);
   padding-bottom: 120px;
   color: var(--primary);
-  padding-top: 48px;
+  padding-top: 120px;
 }
 
 .section-alternative h2{
@@ -1023,4 +1024,48 @@ h6 {
 .dress-images{
   position: relative;
   z-index: 1;
+}
+
+.logotyp-step-2 .logotyp-brand{
+  margin-bottom: -13%;
+}
+
+.logotyp-step-2 .logotyp-content{
+  max-width: 1270px;
+  width: 100%;
+}
+
+.logotyp-step-3 .logotyp-brand{
+  margin-bottom: -5%;
+}
+
+.logotyp-step-3 .col-auto{
+  max-width: 600px;
+}
+
+.logotyp-step-5  .logotyp-brand{
+  margin-bottom: -5%;
+}
+
+
+/* Logotyp Steps Setup */
+.logotyp-steps-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 1000px;
+}
+
+
+/* Hide all steps by default */
+.logotyp-step {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show the first step on load */
+.logotyp-step-1 {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }

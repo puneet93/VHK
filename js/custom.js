@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   var $mainVideoModal = $('#mainVideo');
   var $mainVideoIframe = $mainVideoModal.find('iframe');
   var mainVideoDefaultSrc = $mainVideoIframe.attr('src');
@@ -52,9 +51,7 @@ $(document).ready(function () {
       $videoPoster.addClass('is-playing');
     });
   });
-  
 });
-
 
 // animation
 gsap.registerPlugin(ScrollTrigger);
@@ -68,142 +65,74 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 
-let sections = gsap.utils.toArray(".proc-panel"); 
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".proc-preview",
-    pin: true,
-    scrub: 1,
-    snap: 1 / (sections.length - 1),
-    end: () => "+=" + document.querySelector(".proc-preview").offsetWidth
+// --- RESPONSIVE GSAP: Only run on screens 768px and wider ---
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 768px)", () => {
+
+  // Horizontal Scroll Panel
+  let sections = gsap.utils.toArray(".proc-panel"); 
+  if(sections.length > 0) {
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".proc-preview",
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        end: () => "+=" + document.querySelector(".proc-preview").offsetWidth
+      }
+    });
   }
-});
 
+  // --- SECTION: HISTORIE LOG ---
+  let historySection = document.querySelector(".logos-historie");
+  let historyItems = gsap.utils.toArray(".historie-logo");
 
-// 3. LOGOTYP (Animace podle videa - Zoom a odhalení)
-// const tlLogotyp = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: ".logotyp",
-//     start: "top top",
-//     end: "+=2000", // Délka trvání animace při scrollování
-//     pin: true,
-//     scrub: 1,
-//   }
-// });
-
-// tlLogotyp
-//   .from(".logotyp-brand img", { scale: 0.5, opacity: 0, duration: 1 })
-//   .from(".logotyp-tabs", { x: -100, opacity: 0, duration: 0.5 }, "-=0.2")
-//   .from(".logotyp-brand-zoom", { x: -100, opacity: 0, duration: 0.5 }, "-=0.2")
-//   .from(".logotyp-content p", { y: 50, stagger: 0.2, opacity: 0 });
-const tlLogotyp = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".logotyp",
-    start: "center center",
-    end: "+=3000", 
-    pin: true,
-    scrub: 1,
+  if(historySection) {
+    gsap.to(historyItems, {
+      x: () => -((historySection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 500 : 100)), 
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".section-overlay-image",
+        start: "top top",
+        end: () => "+=" + historySection.scrollWidth,
+        pin: true,
+        scrub: 1,
+      }
+    });
   }
-});
 
-tlLogotyp
-  .from(".logotyp-brand img", { 
-    scale: 0.5, 
-    opacity: 0, 
-    duration: 1 
-  })
-
-  .from(".logotyp-content p", { 
-    y: 50, 
-    stagger: 0.2, 
-    opacity: 0, 
-    duration: 0.8 
-  })
-
-  // 3. TRANSITION: Hide tabs, Show Zoom, and Change Background
-  .to(".logotyp-tabs", { 
-    opacity: 0, 
-    y: -20, 
-    pointerEvents: "none",
-    duration: 0.5 
-  }, "+=0.5") 
-  
-  .to(".logotyp", { 
-    backgroundColor: "#fff",
-    duration: 0.8 
-  }, "<")
-  
-  .from(".logotyp-brand-zoom", { 
-    scale: 0.8,
-    x: -50, 
-    opacity: 0, 
-    duration: 0.8 
-  }, "<");
-
-// --- SECTION: HISTORIE LOG ---
-let historySection = document.querySelector(".logos-historie");
-let historyItems = gsap.utils.toArray(".historie-logo");
-
-gsap.to(historyItems, {
-  x: () => -((historySection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 500 : 100)), 
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".section-overlay-image",
-    start: "top top",
-    end: () => "+=" + historySection.scrollWidth,
-    // pin: ".section-historie .container", // Pin the container inside
-    pin: true,
-    scrub: 1,
-    invalidateOnRefresh: true,
-  }
-});
-
-// --- SECTION: DRESSING (With Sticky BG) ---
-// let dressSection = document.querySelector(".dress-images");
-// let dressItems = gsap.utils.toArray(".dress");
-
-// gsap.to(dressItems, {
-//   x: () => -((dressSection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 150 : 15)),
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".section-dressing",
-//     start: "center center",
-//     end: () => "+=" + (dressSection.scrollWidth + 500),
-//     pin: true, // Pins the entire overlay section including the BG
-//     scrub: 1,
-//     invalidateOnRefresh: true,
-//   }
-// });
-
-// 5. JEDNOTLIVÉ PRVKY (Fade-in a slide-up)
-gsap.utils.toArray('p').forEach(el => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: "top 90%",
-      toggleActions: "play none none reverse"
-    },
-    y: 30,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out"
+  // 5. JEDNOTLIVÉ PRVKY (Fade-in a slide-up)
+  gsap.utils.toArray('p').forEach(el => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%",
+        toggleActions: "play none none reverse"
+      },
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out"
+    });
   });
-});
 
-
-gsap.utils.toArray("[data-fade]").forEach(el => {
-  gsap.from(el, {
-    opacity: 0,
-    y: 40,
-    duration: 1,
-    scrollTrigger: {
-      trigger: el,
-      start: "top 85%"
-    }
+  gsap.utils.toArray("[data-fade]").forEach(el => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%"
+      }
+    });
   });
-});
+
+}); 
+// --- END GSAP MATCHMEDIA ---
 
 
 // image compare
@@ -213,8 +142,6 @@ $(() => {
     var events = imagesCompare.events();
 
     imagesCompare.on(events.changed, (event) => {
-        console.log(events.changed);
-        console.log(event.ratio);
         if (event.ratio < 0.4) {
             console.log('We see more than half of the back image');
         }
@@ -232,3 +159,48 @@ $(() => {
     });
     window.imagesCompareBindControls(imagesCompare);
 });
+
+
+// Tab System (Kept outside matchMedia so clicks still work on mobile)
+const tabs = document.querySelectorAll('.logotyp-tabs a');
+const steps = document.querySelectorAll('.logotyp-step');
+
+if(tabs.length > 0 && steps.length > 0) {
+  let currentIndex = 0;
+  let isAnimating = false; 
+
+  gsap.set(steps[0], { display: 'block', autoAlpha: 1 });
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (currentIndex === index || isAnimating) return;
+      isAnimating = true;
+
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          isAnimating = false; 
+        }
+      });
+
+      tl.to(steps[currentIndex], {
+        duration: 0.3,
+        autoAlpha: 0, 
+        display: 'none', 
+        ease: "power2.inOut"
+      })
+      .to(steps[index], {
+        duration: 0.3,
+        display: 'block', 
+        autoAlpha: 1, 
+        ease: "power2.inOut"
+      });
+
+      currentIndex = index;
+    });
+  });
+}

@@ -99,10 +99,6 @@
         margin-top: 20px;
     }
 
-    .logotyp-brand{
-        margin-top: 48px;
-    }
-
     .typografie-vv h3{
         font-size: 95px;
     }
@@ -242,7 +238,7 @@
     }
 
     .proc-text h2{
-        margin-bottom: 100px;
+        margin-bottom: 30px;
     }
 
     .logotyp-tabs a{
@@ -251,7 +247,8 @@
 
     .logotyp{
         min-height: auto;
-        padding-top: 80px;
+        margin-top: 60px;
+        padding-top: 20px;
         padding-bottom: 80px;
     }
 
@@ -275,10 +272,6 @@
     .logotyp-brand-zoom{
         left: 167px;
         top: -246px;
-    }
-
-    .logotyp-brand{
-        margin-bottom: 35px;
     }
 
     .alternative-logos img{
@@ -360,6 +353,35 @@
 
     .section-alternative .text-l{
         font-size: 18px;
+    }
+
+    .logotyp-brand{
+        margin-bottom: -16%;
+    }
+
+    .logotyp-step-2 .logotyp-brand {
+        margin-bottom: 3%;
+    }
+
+    .logotyp-step-3 .logotyp-brand {
+        margin-bottom: -11%;
+    }
+
+    .logotyp-step-4 .logotyp-brand {
+        margin-bottom: -23%;
+    }
+
+    .logotyp-step-5 .logotyp-brand {
+        margin-bottom: -10%;
+    }
+
+    .proc-horizontal{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .logotyp-steps-wrapper{
+        min-height: 550px;
     }
 }
 
