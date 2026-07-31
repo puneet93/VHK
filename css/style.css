@@ -432,7 +432,6 @@ h6 {
 .logotyp-tabs{
   gap: 2px;
   padding: 2px;
-  margin-top: -65px;
   border-radius: 50px;
   background-color: var(--primary);
 }
@@ -749,7 +748,7 @@ h6 {
 .swiper-card-image{
   width: 100%;
   position: relative;
-  aspect-ratio: 16/11.8;
+  aspect-ratio: 16/9.5;
 }
 
 .swiper-card-image:before{
