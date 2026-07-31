@@ -65,12 +65,32 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 
-// --- RESPONSIVE GSAP: Only run on screens 768px and wider ---
+// --- SECTION: HISTORIE LOG (Runs on ALL screens: Mobile & Desktop) ---
+let historySection = document.querySelector(".logos-historie");
+let historyItems = gsap.utils.toArray(".historie-logo");
+
+if (historySection) {
+  gsap.to(historyItems, {
+    x: () => -((historySection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 500 : 100)), 
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".section-overlay-image",
+      start: "top top",
+      end: () => "+=" + historySection.scrollWidth,
+      pin: true,
+      scrub: 1,
+      invalidateOnRefresh: true,
+    }
+  });
+}
+
+
+// --- RESPONSIVE GSAP: Desktop-only animations (768px and wider) ---
 let mm = gsap.matchMedia();
 
 mm.add("(min-width: 768px)", () => {
 
-  // Horizontal Scroll Panel
+  // Horizontal Scroll Panel (.proc-preview)
   let sections = gsap.utils.toArray(".proc-panel"); 
   if(sections.length > 0) {
     gsap.to(sections, {
@@ -86,25 +106,7 @@ mm.add("(min-width: 768px)", () => {
     });
   }
 
-  // --- SECTION: HISTORIE LOG ---
-  let historySection = document.querySelector(".logos-historie");
-  let historyItems = gsap.utils.toArray(".historie-logo");
-
-  if(historySection) {
-    gsap.to(historyItems, {
-      x: () => -((historySection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 500 : 100)), 
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".section-overlay-image",
-        start: "top top",
-        end: () => "+=" + historySection.scrollWidth,
-        pin: true,
-        scrub: 1,
-      }
-    });
-  }
-
-  // 5. JEDNOTLIVÉ PRVKY (Fade-in a slide-up)
+  // Paragraph Fade-in animations
   gsap.utils.toArray('p').forEach(el => {
     gsap.from(el, {
       scrollTrigger: {
@@ -161,7 +163,7 @@ $(() => {
 });
 
 
-// Tab System (Kept outside matchMedia so clicks still work on mobile)
+// Tab System (Click-based, runs on all screens)
 const tabs = document.querySelectorAll('.logotyp-tabs a');
 const steps = document.querySelectorAll('.logotyp-step');
 
