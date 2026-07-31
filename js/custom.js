@@ -65,24 +65,7 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 
-// --- SECTION: HISTORIE LOG (Runs on ALL screens: Mobile & Desktop) ---
-let historySection = document.querySelector(".logos-historie");
-let historyItems = gsap.utils.toArray(".historie-logo");
 
-if (historySection) {
-  gsap.to(historyItems, {
-    x: () => -((historySection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 500 : 100)), 
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".section-overlay-image",
-      start: "top top",
-      end: () => "+=" + historySection.scrollWidth,
-      pin: true,
-      scrub: 1,
-      invalidateOnRefresh: true,
-    }
-  });
-}
 
 
 // --- RESPONSIVE GSAP: Desktop-only animations (768px and wider) ---
@@ -135,6 +118,25 @@ mm.add("(min-width: 768px)", () => {
 
 }); 
 // --- END GSAP MATCHMEDIA ---
+
+// --- SECTION: HISTORIE LOG (Runs on ALL screens: Mobile & Desktop) ---
+let historySection = document.querySelector(".logos-historie");
+let historyItems = gsap.utils.toArray(".historie-logo");
+
+if (historySection) {
+  gsap.to(historyItems, {
+    x: () => -((historySection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 500 : 100)), 
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".section-overlay-image",
+      start: "top top",
+      end: () => "+=" + historySection.scrollWidth,
+      pin: true,
+      scrub: 1,
+      invalidateOnRefresh: true,
+    }
+  });
+}
 
 
 // image compare
