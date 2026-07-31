@@ -1,5 +1,22 @@
 $(document).ready(function () {
 
+  var $mainVideoModal = $('#mainVideo');
+  var $mainVideoIframe = $mainVideoModal.find('iframe');
+  var mainVideoDefaultSrc = $mainVideoIframe.attr('src');
+  var mainVideoAutoplaySrc = mainVideoDefaultSrc;
+
+  if (mainVideoDefaultSrc && mainVideoDefaultSrc.indexOf('autoplay=1') === -1) {
+    mainVideoAutoplaySrc += (mainVideoDefaultSrc.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1&mute=1';
+  }
+
+  $mainVideoModal.on('shown.bs.modal', function () {
+    $mainVideoIframe.attr('src', mainVideoAutoplaySrc);
+  });
+
+  $mainVideoModal.on('hidden.bs.modal', function () {
+    $mainVideoIframe.attr('src', mainVideoDefaultSrc);
+  });
+
   var swiperLeg = new Swiper(".legendy-swiper", {
     slidesPerView: "auto",
     spaceBetween: 24,
@@ -16,6 +33,24 @@ $(document).ready(function () {
       nextEl: ".swiper-fanou-right",
       prevEl: ".swiper-fanou-left",
     }
+  });
+
+  $('.proc-video-poster, .video-preview').each(function () {
+    var $videoPoster = $(this);
+    var $iframe = $videoPoster.find('iframe');
+    var $button = $videoPoster.find('[data-play-video]');
+    var defaultSrc = $iframe.attr('src');
+    var autoplaySrc = defaultSrc;
+
+    if (defaultSrc && defaultSrc.indexOf('autoplay=1') === -1) {
+      autoplaySrc += (defaultSrc.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1&mute=1';
+    }
+
+    $button.on('click', function (event) {
+      event.preventDefault();
+      $iframe.attr('src', autoplaySrc);
+      $videoPoster.addClass('is-playing');
+    });
   });
   
 });
@@ -126,21 +161,21 @@ gsap.to(historyItems, {
 });
 
 // --- SECTION: DRESSING (With Sticky BG) ---
-let dressSection = document.querySelector(".dress-images");
-let dressItems = gsap.utils.toArray(".dress");
+// let dressSection = document.querySelector(".dress-images");
+// let dressItems = gsap.utils.toArray(".dress");
 
-gsap.to(dressItems, {
-  x: () => -((dressSection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 150 : 15)),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".section-dressing",
-    start: "center center",
-    end: () => "+=" + (dressSection.scrollWidth + 500),
-    pin: true, // Pins the entire overlay section including the BG
-    scrub: 1,
-    invalidateOnRefresh: true,
-  }
-});
+// gsap.to(dressItems, {
+//   x: () => -((dressSection.scrollWidth - window.innerWidth) + (window.innerWidth > 1100 ? 150 : 15)),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".section-dressing",
+//     start: "center center",
+//     end: () => "+=" + (dressSection.scrollWidth + 500),
+//     pin: true, // Pins the entire overlay section including the BG
+//     scrub: 1,
+//     invalidateOnRefresh: true,
+//   }
+// });
 
 // 5. JEDNOTLIVÉ PRVKY (Fade-in a slide-up)
 gsap.utils.toArray('p').forEach(el => {

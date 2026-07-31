@@ -166,9 +166,21 @@
     .hero-t-member{
         right: -60px;
     }
+
+    .mb-120{
+        margin-bottom: 80px;
+    }
+
+    .mb-88{
+        margin-bottom: 65px;
+    }
 }
 
 @media screen and (max-width: 767px) {
+    :root{
+        --24: 25px;
+    }
+
     .text-l {
         font-size: var(--14);
     }
@@ -271,7 +283,7 @@
 
     .alternative-logos img{
         margin: auto;
-        max-width: 220px;
+        max-width: 320px;
     }
 
     .alternative-logos {
@@ -326,6 +338,14 @@
 
     .proc-preview{
         min-height: auto;
+    }
+
+    .mb-120{
+        margin-bottom: 65px;
+    }
+
+    .mb-88{
+        margin-bottom: 44px;
     }
 }
 
