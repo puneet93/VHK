@@ -431,7 +431,9 @@ h6 {
 
 .logotyp-tabs{
   gap: 2px;
+  z-index: 2;
   padding: 2px;
+  position: relative;
   border-radius: 50px;
   background-color: var(--primary);
 }
@@ -450,7 +452,7 @@ h6 {
 }
 
 .logotyp-brand{
-  margin: 28px auto 80px;
+  margin: -6% auto -10%;
   position: relative;
   max-width: 685px;
   width: 100%;
@@ -458,7 +460,7 @@ h6 {
 }
 
 .logotyp-brand > img{
-  max-width: 260px;
+  max-width: 684px;
   display: block;
   margin: auto;
   width: 100%;

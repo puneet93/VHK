@@ -353,6 +353,14 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .section-alternative{
+        text-align: center;
+    }
+
+    .section-alternative .text-l{
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 575px) {
