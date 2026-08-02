@@ -383,6 +383,10 @@
     .logotyp-steps-wrapper{
         min-height: 550px;
     }
+
+    .footer{
+        padding-bottom: 48%;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -398,13 +402,8 @@
         width: 342px;
     }
 
-    .footer{
-        padding-bottom: 240px;
-    }
-
     .horal-cely{
-        bottom: -156px;
-        transform: scale(1.1);
+        max-width: 100%;
     }
 
     .hero h1{
