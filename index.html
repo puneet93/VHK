@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+    <link rel="icon" href="/images/logo.svg" type="image/png" />
+
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet" /> -->
@@ -17,8 +19,9 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="/fonts.css" />
     
+    
 
-    <title>VHK - Vsetín</title>
+    <title>Srdce valašska</title>
   </head>
   <body>
     <div id="wrapper">
@@ -31,10 +34,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ls mx-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/#srdce-valaaska">Srdce valašska</a>
+                <a class="nav-link" href="#srdce-valaaska">Srdce valašska</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/#kam-jdeme">Kam jdeme</a>
+                <a class="nav-link" href="#proc-jdeme">Kam jdeme</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#vizualni-identita">Vizuální identita</a>
@@ -76,13 +79,13 @@
 
             <img src="/images/vsetin_left.png" alt="banner image" class="hero-t-member" />
 
-            <a href="#"><img src="/images/arrow-down.svg" alt="arrow down" /></a>
+            <a href="#proc-jdeme" id="kam-jdeme"><img src="/images/arrow-down.svg" alt="arrow down" /></a>
           </div>
           <!-- /.container -->
         </div>
         <!-- /.hero -->
 
-        <div class="proc-preview">
+        <div class="proc-preview" id="proc-jdeme">
           <div class="proc-horizontal">
             <div class="proc-panel">
               <div class="container">
@@ -116,7 +119,7 @@
         <!-- /.proc-preview -->
 
 
-        <div class="logotyp">
+        <div class="logotyp" id="vizualni-identita">
           <div class="container">
             <div class="logotyp-preview">
               <h2 class="text-center" data-fade>LOGOTYP</h2>
@@ -245,7 +248,7 @@
       </section>
       <!-- /.section-top -->
 
-      <section class="section-alternative" id="kam-jdeme">
+      <section class="section-alternative">
         <div class="container">
           <div class="row justify-content-center text-center">
             <div class="col-12 col-lg-7 col-xl-5">
@@ -284,7 +287,7 @@
         </div>
         <!-- /.container -->
 
-        <img src="/images/vhk-rv-text.svg" alt="vhk-rv-text" class="d-block w-100" id="vizualni-identita" />
+        <img src="/images/vhk-rv-text.svg" alt="vhk-rv-text" class="d-block w-100" />
 
         <div class="typografie">
           <div class="container">
@@ -330,7 +333,7 @@
             <!-- /.row -->
 
             <div class="video-preview" data-video-poster>
-              <iframe class="w-100 h-100" src="https://www.youtube.com/embed/xbOBO0mVGkI?si=FlyE1-sxMyA2J5hn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe class="w-100 h-100" src="https://www.youtube.com/embed/ZdfrEjz8n7w?si=FlyE1-sxMyA2J5hn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <img src="/images/video-writting.jpeg" alt="video poster" class="img-fluid w-100 d-block" />
               <button type="button" class="btn ls d-flex align-items-center font-open fw-semibold" data-play-video><img src="/images/btn-arrow.svg" alt="btn arrow" /> <span>PŘEHRÁT PŘÍBĚH</span></button>
             </div>
@@ -392,9 +395,9 @@
         </div>
 
         <div class="section-dressing overflow-hidden">
+          <h2 class="dress-name">DRESY</h2>
           <div class="dress-images d-flex">
             <div class="dress d-flex align-items-start">
-              <h2 class="dress-name">DRESY</h2>
               <div class="dress-images text-center flex-grow-1">
                 <!-- <img src="/images/yellow-dress.png" alt="yellow dress" class="img-fluid" /> -->
                 <div class="row g-2">
@@ -455,7 +458,7 @@
       <section class="section-bottom overflow-hidden" id="piseme-historii">
         <div class="container">
           <div class="section-bottom-area">
-            <div class="section-heading d-flex justify-content-between align-items-center">
+            <div class="section-heading d-flex justify-content-center align-items-center">
               <!-- <h2>Klubové legendy</h2> -->
               <h2 class="text-center flex-md-grow-1 ps-md-5 ms-md-5">píšeme historii</h2>
 
@@ -846,10 +849,10 @@
             <!-- /.col-6 col-md-5 -->
             <div class="col-6 col-md-7">
               <ul class="footer-links ls list-unstyled d-flex text-center justify-content-md-start justify-content-center align-items-center flex-md-row flex-column">
-                <li><a href="/#srdce-valaaska">Srdce Valašska</a></li>
-                <li><a href="/#kam-jdeme">Kam jdeme</a></li>
-                <li><a href="/#vizualni-identita">Vizuální identita</a></li>
-                <li><a href="/#piseme-historii">Píšeme historii</a></li>
+                <li><a href="#srdce-valaaska">Srdce Valašska</a></li>
+                <li><a href="#kam-jdeme">Kam jdeme</a></li>
+                <li><a href="#vizualni-identita">Vizuální identita</a></li>
+                <li><a href="#piseme-historii">Píšeme historii</a></li>
               </ul>
 
               <a target="_blank" href="/pdf/vsetin_manual_valach.pdf" class="btn d-md-inline-block d-none btn-sm ls"><span>Ke stažení</span></a>

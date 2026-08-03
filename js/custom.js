@@ -65,6 +65,28 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 
+// --- SMOOTH ANCHOR LINKS (LENIS) ---
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    
+    // Ignore empty anchors like just "#"
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      e.preventDefault();
+      
+      // Tell Lenis to scroll smoothly to the target element
+      lenis.scrollTo(targetElement, {
+        offset: 0, // Adjust this if you have a sticky header (e.g., -80)
+        duration: 1.2 // Optional scroll duration in seconds
+      });
+    }
+  });
+});
+
 
 
 
