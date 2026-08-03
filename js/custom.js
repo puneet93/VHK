@@ -230,3 +230,35 @@ if(tabs.length > 0 && steps.length > 0) {
     });
   });
 }
+
+
+
+// --- SMOOTH ANCHOR LINKS & MOBILE MENU CLOSE ---
+const navbarCollapse = document.querySelector('#navbarSupportedContent');
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    
+    // Ignore empty anchors like just "#"
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      e.preventDefault();
+      
+      // 1. Scroll smoothly to the target using Lenis
+      lenis.scrollTo(targetElement, {
+        offset: 0, // Adjust this if you have a sticky header (e.g., -80)
+        duration: 1.2 // Optional scroll duration in seconds
+      });
+
+      // 2. Close the Bootstrap mobile menu if it is currently open
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        bsCollapse.hide();
+      }
+    }
+  });
+});
